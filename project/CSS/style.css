@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  border-bottom: 0.25px solid #ffffff3b;
+  margin-bottom: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 84px;
+  background-color: #e6e6e6;
+}
+
+li a {
+  display: block;
+  color: rgba(0, 0, 0, 0.427);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+header ul li {
+  float: none;
+  display: inline-block;
+  margin-right: 90px;
+  font-family: sourcecode-pro, monospace;
+  color: white;
+  /* Adds space to the right of each list item */
+}
+
+header ul li a {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+header ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  /* Adjust this value to bring the effect closer or further from the li */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgb(115, 0, 255);
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+header ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+li a:hover {
+  color: #000000;
+  /* Changes the color to white when hovered over */
+}
+
+li:last-child {
+  margin-right: 0;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  align-items: center;
+}
+
+.content {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.search {
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: repeat(17, 50px);
+  justify-content: center;
+  margin-top: -20px;
+}
+
+.searchbar {
+  grid-row: 1/2;
+  grid-column: 8 / 14;
+}
+
+/* .search img {
+    height: 50px;
+    /* grid-row: 1 /2;
+  grid-column: 1 / 6; */
+
+.search-icon {
+  grid-row: 1/2;
+  /* background-color: #e3e3e3; */
+  grid-column: 13 / 14;
+  width: 20px;
+  height: 20px;
+}
