@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
 
   <body>
@@ -19,21 +23,36 @@
           <li><a>DAMES</a></li>
           <li><a>KIDS</a></li>
           <li>
-            <a>
-              <bold>SALE!</bold>
-            </a>
+            <a class="sale"> SALE! </a>
           </li>
         </ul>
       </nav>
     </header>
     <div class="search">
-      <img src="../IMG/sneakerStore.png" />
+      <img class="logo-icon" src="../IMG/sneakerStore.png" />
       <input
         class="searchbar"
         type="text"
         placeholder="Waar bent u naar opzoek?"
       />
-      <img class="search-icon" src="../IMG/searchIcon.png" />
+      <a class="search-icon" href=""
+        ><img class="search-icon" src="../IMG/searchIcon.png"
+      /></a>
+      <a class="heart-icon" href=""
+        ><img class="heart-icon" src="../IMG/heart-icon.png"
+      /></a>
+      <a class="bag-icon" href=""
+        ><img class="bag-icon" src="../IMG/bag-icon.jpg"
+      /></a>
     </div>
+    <section class="image-slider">
+      <div class="arrow-left">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+      <div class="arrow-right">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </section>
+    <script src="../JS/main.js"></script>
   </body>
 </html>

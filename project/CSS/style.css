@@ -21,7 +21,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 84px;
+  height: 60px;
   background-color: #e6e6e6;
 }
 
@@ -68,7 +68,7 @@ header ul li a::after {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: rgb(115, 0, 255);
+  background-color: rgb(0, 0, 0);
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
 }
@@ -79,11 +79,15 @@ header ul li a:hover::after {
 
 li a:hover {
   color: #000000;
-  /* Changes the color to white when hovered over */
 }
 
 li:last-child {
   margin-right: 0;
+}
+
+.sale {
+  color: red;
+  font-weight: 900;
 }
 
 .container {
@@ -124,15 +128,88 @@ li:last-child {
   grid-column: 8 / 14;
 }
 
-/* .search img {
-    height: 50px;
-    /* grid-row: 1 /2;
-  grid-column: 1 / 6; */
-
 .search-icon {
   grid-row: 1/2;
-  /* background-color: #e3e3e3; */
   grid-column: 13 / 14;
   width: 20px;
   height: 20px;
+  margin-top: 8px;
+  margin-left: 9px;
+}
+
+.logo-icon {
+  grid-row: 1/2;
+  grid-column: 1/6;
+  height: 50px;
+}
+
+.heart-icon {
+  grid-column: 16/17;
+  grid-row: 1/2;
+  height: 50px;
+  width: 50px;
+}
+
+.bag-icon {
+  grid-column: 17/18;
+  grid-row: 1/2;
+  height: 50px;
+  width: 50px;
+}
+
+.image-slider {
+  min-height: 30em;
+  height: 100vh;
+  position: relative;
+  background-image: url(../IMG/sneaker1.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 0.3s;
+}
+
+.image-slider * {
+  box-sizing: border-box;
+}
+
+.arrow-left,
+.arrow-right {
+  background: #fff;
+  position: absolute;
+  top: 40%;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  background: #000;
+  color: #fff;
+}
+
+.arrow-left {
+  left: 1em;
+}
+
+.arrow-right {
+  right: 1em;
+}
+
+.image-fade {
+  animation: imgFade 0.5s ease-in-out;
+}
+
+@keyframes imgFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
