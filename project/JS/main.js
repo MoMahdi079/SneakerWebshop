@@ -19,6 +19,14 @@ function slide(id) {
   }, 500);
 }
 
+function nextImage() {
+  id++;
+  if (id >= images.length) {
+    id = 0;
+  }
+  slide(id);
+}
+
 arrLeft.addEventListener("click", () => {
   console.log("Left arrow clicked");
   id--;
@@ -26,6 +34,7 @@ arrLeft.addEventListener("click", () => {
     id = images.length - 1;
   }
   slide(id);
+  resetInterval();
 });
 
 arrRight.addEventListener("click", () => {
@@ -35,7 +44,14 @@ arrRight.addEventListener("click", () => {
     id = 0;
   }
   slide(id);
+  resetInterval();
 });
 
-// Initialize the slider with the first image
+let intervalId = setInterval(nextImage, 4000);
+
+function resetInterval() {
+  clearInterval(intervalId);
+  intervalId = setInterval(nextImage, 4000);
+}
+
 slide(id);

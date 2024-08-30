@@ -10,6 +10,17 @@ body {
   background-color: #ffffff;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.snelle {
+  font-family: "Arial", sans-serif;
+  font-weight: 700;
+}
+.dagen {
+  font-family: "Arial", sans-serif;
+  font-weight: 700;
 }
 
 nav {
@@ -24,11 +35,8 @@ li a {
   display: block;
   color: rgba(0, 0, 0, 0.427);
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 20px;
   text-decoration: none;
-}
-header {
-  margin-bottom: 20px;
 }
 
 header ul {
@@ -83,18 +91,25 @@ li a:hover {
 li:last-child {
   margin-right: 0;
 }
+header i {
+  color: #ffffff;
+}
 .top-bar {
   width: 100%;
   height: 35px;
-  background-color: #d6d6d63b;
+  background-color: #000000;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 40%;
+}
+
+.top-bar div {
+  display: flex;
 }
 .top-bar a {
-  margin: 0 15%;
-  align-items: center;
+  color: rgb(255, 255, 255);
 }
 
 .sale {
@@ -112,15 +127,14 @@ li:last-child {
 .search {
   display: grid;
   grid-template-rows: 50px;
-  grid-template-columns: repeat(17, 50px);
+  grid-template-columns: repeat(27, 50px);
   justify-content: center;
-  margin-top: -20px;
-  padding-bottom: 5px;
+  padding-top: 15px;
 }
 
 .searchbar {
   grid-row: 1/2;
-  grid-column: 8 / 14;
+  grid-column: 11 / 18;
   border: 0;
   background-color: #d6d6d63b;
   border-radius: 10px;
@@ -133,11 +147,11 @@ li:last-child {
 
 .search-icon {
   grid-row: 1/2;
-  grid-column: 13 / 14;
+  grid-column: 17 / 18;
   width: 20px;
   height: 20px;
   margin-top: 8px;
-  margin-left: 9px;
+  margin-left: 4px;
 }
 
 .logo-icon {
@@ -147,14 +161,14 @@ li:last-child {
 }
 
 .heart-icon {
-  grid-column: 16/17;
+  grid-column: 23/24;
   grid-row: 1/2;
   height: 50px;
   width: 50px;
 }
 
 .bag-icon {
-  grid-column: 17/18;
+  grid-column: 24/25;
   grid-row: 1/2;
   height: 50px;
   width: 50px;
@@ -177,9 +191,10 @@ li:last-child {
 
 .arrow-left,
 .arrow-right {
-  background: #fff;
+  background: #ffffff;
+  color: #000000;
   position: absolute;
-  top: 40%;
+  top: 44%;
   width: 3em;
   height: 3em;
   border-radius: 50%;
@@ -188,6 +203,7 @@ li:last-child {
   align-items: center;
   cursor: pointer;
   transition: 0.3s;
+  animation: slide-in 1s forwards;
 }
 
 .arrow-left:hover,
@@ -196,16 +212,76 @@ li:last-child {
   color: #fff;
 }
 
+.arrow-left,
+.arrow-right {
+  transition: 0.3s;
+  opacity: 0;
+}
+
 .arrow-left {
-  left: 1em;
+  left: -3em;
 }
 
 .arrow-right {
-  right: 1em;
+  right: -3em;
 }
 
-.image-fade {
-  animation: imgFade 0.5s ease-in-out;
+.image-slider:hover .arrow-left {
+  animation: slide-in-left 1s forwards; /* Slide in animation */
+  animation-delay: 0.1s; /* Delay for left arrow */
+  opacity: 1; /* Make visible */
+}
+
+.image-slider:hover .arrow-right {
+  animation: slide-in-right 1s forwards; /* Slide in animation */
+  animation-delay: 0.1s; /* Delay for right arrow */
+  opacity: 1; /* Make visible */
+}
+
+.image-slider:not(:hover) .arrow-left {
+  animation: slide-out-left 1s forwards; /* Slide out animation */
+  opacity: 0; /* Make hidden */
+}
+
+.image-slider:not(:hover) .arrow-right {
+  animation: slide-out-right 1s forwards; /* Slide out animation */
+  opacity: 0; /* Make hidden */
+}
+
+@keyframes slide-in-left {
+  from {
+    left: -3em; /* Start position outside the page */
+  }
+  to {
+    left: 1em; /* Final position for left arrow */
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    right: -3em; /* Start position outside the page */
+  }
+  to {
+    right: 1em; /* Final position for right arrow */
+  }
+}
+
+@keyframes slide-out-left {
+  from {
+    left: 1em; /* Start position inside the page */
+  }
+  to {
+    left: -3em; /* Final position outside the page */
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    right: 1em; /* Start position inside the page */
+  }
+  to {
+    right: -3em; /* Final position outside the page */
+  }
 }
 
 @keyframes imgFade {
