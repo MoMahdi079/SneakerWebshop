@@ -55,3 +55,47 @@ function resetInterval() {
 }
 
 slide(id);
+
+let isDown = false;
+let startX;
+let scrollLeft;
+const sliderr = document.querySelector(".items");
+
+const end = () => {
+  isDown = false;
+  sliderr.classList.remove("active");
+};
+
+const start = (e) => {
+  if (e.type === "mousedown" && e.button !== 0) return;
+  isDown = true;
+  sliderr.classList.add("active");
+  startX = (e.pageX || e.touches[0].pageX) - sliderr.offsetLeft;
+  scrollLeft = sliderr.scrollLeft;
+};
+
+const move = (e) => {
+  if (!isDown) return;
+
+  e.preventDefault();
+  const x = (e.pageX || e.touches[0].pageX) - sliderr.offsetLeft;
+  const dist = x - startX;
+  sliderr.scrollLeft = scrollLeft - dist;
+};
+
+(() => {
+  sliderr.addEventListener("mousedown", start);
+  sliderr.addEventListener("touchstart", start);
+
+  sliderr.addEventListener("mousemove", move);
+  sliderr.addEventListener("touchmove", move);
+
+  sliderr.addEventListener("mouseleave", end);
+  sliderr.addEventListener("mouseup", end);
+  sliderr.addEventListener("touchend", end);
+
+  const imagesAndLinks = sliderr.querySelectorAll("img, a");
+  imagesAndLinks.forEach((el) => {
+    el.addEventListener("dragstart", (e) => e.preventDefault());
+  });
+})();
