@@ -229,8 +229,7 @@ header i {
 .brand img {
   width: 100px;
   height: 66px;
-  /* filter: grayscale(100%); */
-  object-fit: contain; /* Ensures the image covers the entire area */
+  object-fit: contain;
 }
 
 .image-slider {
@@ -331,10 +330,10 @@ header i {
 .wrapper .item img {
   display: block;
   margin: 0 auto;
-  transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+  transition: transform 0.3s ease;
 }
 .wrapper .item:hover img {
-  transform: scale(1.2); /* Zoom in the image slightly */
+  transform: scale(1.2);
 }
 
 .wrapper .item a {
@@ -371,14 +370,14 @@ header i {
 }
 .brand-line {
   border: none;
-  border-top: 1px solid #000; /* Adjust the color and thickness as needed */
-  margin: 1px 0; /* Adjust the spacing as needed */
+  border-top: 1px solid #000;
+  margin: 1px 0;
 }
 
 .items img,
 .items a {
   -webkit-user-drag: none;
-  user-drag: none;
+  /* user-drag: none; */
 }
 
 .flex-brand {
@@ -390,16 +389,17 @@ header i {
 .flex-brand div {
   flex: 1;
   margin: 0 10px;
-  overflow: hidden; /* Ensure the image doesn't overflow the container */
+  overflow: hidden;
 }
 
 .flex-brand img {
   width: 100%;
-  transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures the image scales without being cropped */
 }
 
 .flex-brand div:hover img {
-  transform: scale(1.04); /* Zoom the image to 1.1 times its original size */
+  transform: scale(1.04);
 }
 
 .left-div,
@@ -455,13 +455,13 @@ header i {
 }
 .grid-item-wrapper {
   display: flex;
-  flex-direction: column; /* Stack the grid item and h3 vertically */
-  align-items: center; /* Center the h3 horizontally */
+  flex-direction: column;
+  align-items: center;
 }
 
 .grid-item-wrapper h3 {
-  margin-top: 10px; /* Space between the image and the h3 tag */
-  text-align: center; /* Center the text inside the h3 tag */
+  margin-top: 10px;
+  text-align: center;
 }
 
 @media screen and (min-width: 500px) {
@@ -535,33 +535,34 @@ header i {
 }
 .footer {
   width: 100%;
-  height: 500px; /* Set the height to 500px */
-  background-color: #161616; /* Dark blue background color */
+  height: 500px;
+  background-color: #161616;
   color: #fff;
-  padding: 20px 0; /* Padding to decrease the height */
+  padding: 20px 0;
   display: flex;
-  align-items: center; /* Center the content vertically */
+  align-items: center;
 }
 
 .footer .footer-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center; /* Center the items vertically */
+  align-items: center;
   gap: 1rem;
-  padding: 0 20px; /* Padding for the content inside the footer */
-  width: 100%; /* Ensure the row takes the full width of the footer */
+  padding: 0 20px;
+  width: 100%;
 }
 
 .footer-col {
   flex: 1;
   min-width: 200px;
-  padding: 0 10px; /* Add padding to each column for better spacing */
+  padding: 0 10px;
 }
 
 .footer-col h4 {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  padding-left: 120px;
 }
 
 .footer-col p {
@@ -615,4 +616,54 @@ header i {
 
 .footer-col button:hover {
   background-color: #0c00af;
+}
+.footer-col .social-links img {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Media Queries */
+@media (min-width: 1920px) {
+  .container {
+    width: 80vw;
+  }
+
+  .footer-col .social-links img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .container {
+    width: 85vw;
+  }
+
+  .footer-col .social-links img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 1080px) and (max-width: 1439px) {
+  .container {
+    width: 90vw;
+  }
+
+  .footer-col .social-links img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 1079px) {
+  .container {
+    width: 95vw;
+  }
+
+  .footer-col .social-links img {
+    width: 30px;
+    height: 30px;
+  }
 }
